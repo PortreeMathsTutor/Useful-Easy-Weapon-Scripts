@@ -1,0 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TrackPlayer : MonoBehaviour
+{
+
+    public AudioClip clip1;
+    public AudioClip clip2;
+    public AudioSource audioSource;
+
+    void Start()
+    {
+
+    }
+
+    void Update()
+    {
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = clip1;
+            audioSource.Play();
+            if (!audioSource.isPlaying)
+                {
+                audioSource.clip = clip1;
+                audioSource.Play();
+                 }
+            }
+    }
+}
