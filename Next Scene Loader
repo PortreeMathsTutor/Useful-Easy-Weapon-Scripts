@@ -1,0 +1,22 @@
+
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+// I put this on an empty object in scene 0.
+
+public class NextSceneLoader : MonoBehaviour
+{
+    private float time;
+
+    // Update is called once per frame
+    void Update()
+    {
+       time = CountDownTimer.timeTimer; // We need to acces the time value that is stored in a different script.
+        if (time < 1) { SceneManager.LoadScene(1); }
+    }
+}
+
