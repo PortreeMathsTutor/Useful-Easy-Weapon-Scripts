@@ -15,7 +15,5 @@ public class SimpleTimer : MonoBehaviour
             timeTimer = timeTimer - 1;
             timeRemaining.text = timeTimer.ToString("0");
         }
-if(timeTimer < 1)
-{   SceneManager.LoadScene(1);}      //Make a new level for your scores (Scene 1)
-    }
+
 }
