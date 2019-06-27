@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+// There will be an other script with a variable called score and we are going to get it and use it 
+//in this script.
+
+public class UpdateTheScoreText : MonoBehaviour
+{
+    public float score; // in the other script the variable score will 
+                        // be defined          public static int score;
+                        // using the word static means the variable can be accessed else where.
+
+
+
+    public Text score1;
+
+
+    // Update is called once per frame
+    void Update()
+    {
+           score = Health.score; // We need to acces the score value that is stored in a different script.
+        score1.text = score.ToString("0") + " points";
+
+    }
+}
