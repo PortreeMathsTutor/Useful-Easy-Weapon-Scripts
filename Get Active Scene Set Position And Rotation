@@ -1,0 +1,24 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class WhenSceneChangesSetPosition : MonoBehaviour
+{
+    public GameObject textObject;
+    public Vector3 newPositionOfObject;
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Scene sceneLoaded = SceneManager.GetActiveScene();
+        if (sceneLoaded.buildIndex == 1)
+        { textObject.transform.SetPositionAndRotation(newPositionOfObject, Quaternion.Euler(0, 0, 0)); }
+    }
+
+}
