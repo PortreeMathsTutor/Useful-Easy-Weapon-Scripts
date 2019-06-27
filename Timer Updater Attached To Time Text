@@ -1,0 +1,21 @@
+using UnityEngine.UI;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+// I attached this to the time text
+
+public class SimpleTimer : MonoBehaviour
+{
+    public static float timeTimer = 60f;
+    public Text timeRemaining;
+    void Update()
+    {
+        if (timeTimer > 0)
+        {
+            timeTimer = timeTimer - 1;
+            timeRemaining.text = timeTimer.ToString("0");
+        }
+if(timeTimer < 1)
+{   SceneManager.LoadScene(1);}      //Make a new level for your scores (Scene 1)
+    }
+}
