@@ -1,0 +1,17 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+//I attached this to the player.
+
+public class DieWhenEnemyTouchesYou : MonoBehaviour
+{
+
+void OnCollisionEnter(Collision collisionInfo)
+    {
+        // We check if the object we collided with has a tag called "Respawn".
+        if (collisionInfo.collider.tag == "Respawn")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Debug.Log("PlayerCollision script restart current scene");
+        }
+}
