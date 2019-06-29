@@ -1,0 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MoveTheAnimationForward : MonoBehaviour
+{
+    public Animator anim;
+    public Transform target;
+    public float speed;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        anim.GetCurrentAnimatorStateInfo(0);
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Walk"))
+        {
+            float step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        }
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Run"))
+        {
+            float step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        }
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Fly Forward"))
+        {
+            float step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        }
+    }
+}
