@@ -22,7 +22,7 @@ public class TrackPlayer : MonoBehaviour
             audioSource.Play();
             if (!audioSource.isPlaying)
                 {
-                audioSource.clip = clip1;
+                audioSource.clip = clip2;
                 audioSource.Play();
                  }
             }
