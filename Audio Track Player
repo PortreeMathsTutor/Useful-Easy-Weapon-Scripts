@@ -8,6 +8,8 @@ public class TrackPlayer : MonoBehaviour
     public AudioClip clip1;
     public AudioClip clip2;
     public AudioSource audioSource;
+    private bool playClip1 = true;
+    private bool playClip2 = false;
 
     void Start()
     {
@@ -16,15 +18,20 @@ public class TrackPlayer : MonoBehaviour
 
     void Update()
     {
-        if (!audioSource.isPlaying)
+             if (!audioSource1.isPlaying & playClip1)
         {
-            audioSource.clip = clip1;
-            audioSource.Play();
-            if (!audioSource.isPlaying)
-                {
-                audioSource.clip = clip2;
-                audioSource.Play();
-                 }
-            }
+            audioSource1.clip = clip1;
+            audioSource1.Play();
+            playClip1 = false;
+            playClip2 = true;
+        }
+
+        if (!audioSource1.isPlaying & playClip2)
+        {
+            audioSource1.clip = clip2;
+            audioSource1.Play();
+            playClip2 = false;
+            playClip3 = true;
+        }
     }
 }
