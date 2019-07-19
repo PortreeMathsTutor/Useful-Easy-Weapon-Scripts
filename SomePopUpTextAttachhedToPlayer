@@ -1,0 +1,42 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class IfConditionDisplayText : MonoBehaviour
+{
+    //UI Text Reference
+    public Text playerMessage;
+    public Transform dragon;
+    public float radius = 1000;
+    public float keys =0;
+    public float coins= 200;
+
+    //Button States
+    public int buttonState = 0;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        keys = CollectKey.keys;
+        coins = CollectCoins.coins;
+
+        if (Vector3.Distance(dragon.transform.position, transform.position) < radius)
+        {
+            playerMessage.text = "Your Going to Need A Bigger Gun!";
+        }
+        else if ((keys != 0) || ((coins > 198)|| (coins < 197))) { playerMessage.text = ""; }
+        else if ((keys == 0)&(coins<198)&(coins>197))
+        {
+            playerMessage.text = "Find the Key to the Tower!";
+        }
+        else  { playerMessage.text = ""; }
+    }
+}
