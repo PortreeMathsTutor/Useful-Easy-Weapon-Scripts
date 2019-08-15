@@ -1,0 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MoveTheFairies : MonoBehaviour
+{
+
+    public float lerpMultiplyer = 10;
+    public Transform target;
+    public float speed = 1;
+    private Vector3 ran;
+    // Start is called before the first frame update
+    void Start()
+    {
+        ran = new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 10f), Random.Range(-10f, 10f));
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Vector3.Distance(target.transform.position, transform.position) > 50)
+        {
+            float step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+            transform.position = Vector3.Lerp(transform.position, transform.position + ran, Time.deltaTime * lerpMultiplyer);
+
+        }
+    }
+}
