@@ -1,0 +1,25 @@
+  using UnityEngine;
+  using System.Collections;
+  
+  public class AssetCreation : MonoBehaviour
+ {
+ 
+     public GameObject preFab;
+ 
+     public GameObject target;
+ 
+     Vector3 mousePos;
+  
+     void Start()
+     {
+         target = (GameObject)Instantiate(preFab);
+     }
+ 
+     void Update()
+     {
+         mousePos = Input.mousePosition;
+         mousePos.z = 10f;
+ 
+         target.transform.position = Camera.main.ScreenToWorldPoint(mousePos);
+     }
+ }
