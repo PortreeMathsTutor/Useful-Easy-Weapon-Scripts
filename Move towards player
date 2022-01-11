@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class MoveTowardsPlayer : MonoBehaviour
 {
-    public Transform target;
+    public GameObject player;
     public float speed;
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
 
     void Update()
     {
         float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
     }
 }
