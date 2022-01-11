@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveTowardsPlayer : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject player;
     public float speed;
     private void Start()
     {
