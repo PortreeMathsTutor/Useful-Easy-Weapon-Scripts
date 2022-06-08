@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class RotateToFacePlayer : MonoBehaviour
 {
-    // The target marker.
-    public Transform target;
+ 
+    private GameObject player;
 
+    private void Start()
+    {
+        player = GameObject.Find("Player");
+    }
 
     void Update()
     {
         // Rotate the camera every frame so it keeps looking at the target
-        transform.LookAt(target);
+        transform.LookAt(player.transform);
     }
 }
